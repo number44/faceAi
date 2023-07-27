@@ -9,6 +9,10 @@
     <title>zdjęcie-dokument.pl</title>
   </head>
   <body>
+    <div class="counting d-none">
+      <h4>Wczytuję</h4>
+      <p id="counter"></p>
+    </div>
     <div id="top"></div>
     <div id="preloader">
       <div class="spinner"></div>
@@ -18,7 +22,7 @@
     </div>
     <header>
       <nav class="container">
-        <a href="#" class="brand"
+        <a href="index.html" class="brand"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -40,7 +44,7 @@
           </svg>
           <span>zdjecie-dokument.pl</span>
         </a>
-        <div class="menu" x-data="{open : false}">
+        <div class="menu d-none" x-data="{open : false}">
           <div class="link-btn" @click="open = !open">
             <span>dokumenty</span
             ><svg
@@ -58,52 +62,61 @@
               />
             </svg>
           </div>
-          <div class="link-list" x-show="open" @click.outside="open = false">
-            <a href="dowod.html">Zdjęcie do dowodu</a>
-            <a href="paszport.html">Zdjęcie do paszportu</a>
-            <a href="prawo.html">Zdjęcie do prawa jazdy</a>
-            <a href="cv.html">Zdjęcie do CV</a>
-            <a href="dyplom.html">Zdjęcie do dyplomu</a>
-            <a href="legitymacja.html">Zdjęcie do legitymacji studenckiej</a>
+          <div
+            class="link-list d-none"
+            x-show="open"
+            @click.outside="open = false"
+          >
+            <a href="/">Zdjęcie do paszportu</a>
+            <a href="/">Zdjęcie do dowodu</a>
+            <a href="/">Zdjęcie do prawa jazdy</a>
+            <a href="#">Zdjęcie do CV</a>
+            <a href="#">Zdjęcie do dyplomu</a>
+            <a href="#">Zdjęcie do legitymacji studenckiej</a>
           </div>
         </div>
       </nav>
     </header>
     <main>
-      <section id="hero">
+      <section id="app">
         <div class="container">
           <div class="left">
-            <h1>Zdjęcia do dokumentów online</h1>
+            <h1>Zdjęcie do paszportu</h1>
             <p>
-              Składasz wniosek online o wyrobienie dokumentu, lecz nie posiadasz
-              zdjęcia? Wygeneruj zdjęcie do dokumentów online w 3 minuty dzięki
-              naszemu innowacyjnemu narzędziu.
+              Wgraj zdjęcie i poczekaj 3 minuty. Szanujemy twoją prywatność,
+              zdjęcie ulega obróbce w Twojej przeglądarce.
             </p>
-            <a href="#documents" class="btn btn-primary">Wybierz dokument</a>
+            <label class="btn btn-primary" for="file-upload"
+              >Wybierz Zdjęcie
+              <input
+                class="input"
+                title="zdjęcie"
+                type="file"
+                name="file-upload"
+                id="uploadInput"
+              />
+            </label>
+
             <div class="numbers">
               <div class="number-column">
-                <div class="number">13000 +</div>
-                <p class="subject">Zdjęć wykonanych za pomocą naszej usługi</p>
+                <div class="number">100%</div>
+                <p class="subject">Gwarancji prywatności</p>
               </div>
               <div class="number-column">
                 <div class="number">3 Minuty</div>
                 <p class="subject">
-                  są potrzebne do skorzystania z naszej usługi
+                  tyle czasu zajmuje przycięcie zdjęcia i wycięcie tła
                 </p>
               </div>
             </div>
           </div>
           <div class="right">
             <figure class="img-figure">
-              <img class="img" src="images/man.jpg" alt="" />
-              <img class="img2" src="images/manbg.png" alt="" />
-              <div class="img-group">
-                <img class="img-thumb" src="images/manbg-cropped.png" alt="" />
-                <img class="img-thumb" src="images/manbg-cropped.png" alt="" />
-                <img class="img-thumb" src="images/manbg-cropped.png" alt="" />
-                <img class="img-thumb" src="images/manbg-cropped.png" alt="" />
-              </div>
+              <img class="img image" src="images/manbg.png" alt="" />
             </figure>
+            <a href="" download class="buton-download btn-primary btn d-none"
+              >Pobierz</a
+            >
           </div>
         </div>
       </section>
@@ -284,6 +297,7 @@
     <footer>
       <p>@copyright zdjecie-dokument.pl</p>
     </footer>
+    <script type="module" src="/src/main.ts"></script>
     <script type="module" src="/src/index.ts"></script>
   </body>
 </html>

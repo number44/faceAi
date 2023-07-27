@@ -9,14 +9,17 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/animejs": "^3.1.7",
     "@types/node": "^20.4.4",
+    "autoprefixer": "^10.4.14",
     "sass": "^1.64.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-handlebars": "^1.6.0"
   },
   "dependencies": {
     "@imgly/background-removal": "^1.0.6",
-    "@tensorflow/tfjs": "^4.9.0",
+    "animejs": "^3.2.1",
     "face-api.js": "^0.20.0"
   }
 }
